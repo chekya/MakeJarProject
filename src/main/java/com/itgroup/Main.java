@@ -1,10 +1,10 @@
-package com.itgroup;
+package com.itgroup;   //4번 이제 사용자 인터페이스를 구성한다. 메뉴 선택->Manager에 요청->Dao까지 전달.
 import  com.itgroup.bean.Member;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class Main { // 사용자 인터페이스(메뉴 출력 & 사용자 입력)
     public static <scanner> void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         MemberManager manager = new MemberManager();
@@ -38,5 +38,19 @@ public class Main {
                     break;
             }
         }
-        }
     }
+}
+/* 정리: “생각의 순서” 다시 한 번 요약
+단계	    생각	                     코드
+1	“회원 정보를 다루고 싶다”	          Member.java 작성
+2	“DB에 저장하고 불러오고 싶다”	      MemberDao.java에서 DB 연결, SQL 작성
+3	“사용자 요청을 처리할 로직 필요”	  MemberManager.java에서 로직 작성
+4	“사용자 입력받고 메뉴 보여줘야지”	  Main.java 작성
+
+참고: 중요한 설계 원칙
+역할 분리 (Separation of Concerns)
+→ 클래스마다 "하나의 책임"만 가지게 한다
+유지보수 쉬움
+→ DB 구조 바뀌어도 DAO만 수정하면 된다
+테스트 용이
+→ 비즈니스 로직과 DB가 분리돼 있어 테스트가 쉽다. */

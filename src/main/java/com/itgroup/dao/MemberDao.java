@@ -1,9 +1,9 @@
-package com.itgroup.dao;
+package com.itgroup.dao;  //2번 DB와 통신하는 코드 만들기 (1. 오라클에 연결하려면 JDBC 드라이버 필요 2.연결 정보를 담은 getConnection() 함수 작성 3. 필요한 SQL문들 정의  //이 클래스는 SQL을 담당(DB 입출력만 처리)
 
 import java.sql.*;
 
 //데이터 베이스와 직접 연동하여 CRUD 작업을 수행해주는 DAO 클래스
-public class MemberDao {
+public class MemberDao {   //DB연동 ( DB에 직접 연결해서 CRUD 처리)
     public MemberDao() {
         // 드라이버 관련 OracleDriver 클래스는 ojdbc6.jar 파일에 포함되어 있는 자바 클래스입니다.
         String driver = "oracle.jdbc.driver.OracleDriver"; //이 문자열을 하단 forName에 넣으면 ojdbc6.jar 파일에 있는자바클래스를 동적으로 만들어준다.
@@ -17,11 +17,11 @@ public class MemberDao {
         }
     }
 
-    public Connection getConnection() {
+    public Connection getConnection() {  //DB 연결 정보 설정
         Connection conn = null;  //접속 객체
         String url = "jdbc:oracle:thin:@localhost:1521:xe";
         String id = "oraman";
-        String password = "oracle";
+        String password = "oracle";  //해당계정의 비번
 
         try {
             conn = DriverManager.getConnection(url, id, password);
@@ -32,7 +32,7 @@ public class MemberDao {
         return conn;
     }
 
-    public int getSize() {
+    public int getSize() {  //select count(*) 쿼리 실행해서 회원 수 가져옴
         String sql = "select count(*) as cnt from members ";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
