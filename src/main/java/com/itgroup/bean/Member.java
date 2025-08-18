@@ -1,4 +1,4 @@
-package com.itgroup.bean;  //1번 생성자(빈 생성자 포함 각 객체),gutter, setter, overloding(회원 한 명이 정보가 뭐가 있나 정의 하는것)
+package com.itgroup.bean;  //1번 데이터를 담는 객체(생성자(빈 생성자 포함 각 객체),gutter, setter, overloding(회원 한 명이 정보가 뭐가 있나 정의 하는것))
 
 public class Member { //데이터 구조 (회원 정보 객체(체이터 저장용))
     private String id ;

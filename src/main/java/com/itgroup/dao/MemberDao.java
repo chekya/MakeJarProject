@@ -1,4 +1,4 @@
-package com.itgroup.dao;  //2번 DB와 통신하는 코드 만들기 (1. 오라클에 연결하려면 JDBC 드라이버 필요 2.연결 정보를 담은 getConnection() 함수 작성 3. 필요한 SQL문들 정의  //이 클래스는 SQL을 담당(DB 입출력만 처리)
+package com.itgroup.dao;  //2번 DB와 통신하는 코드 만들기 (1. 오라클에 연결하려면 JDBC 드라이버 필요 2.연결 정보를 담은 getConnection() 함수 작성 3. 필요한 SQL문 정의 및 실행(select, insert ect.)  //이 클래스는 SQL을 담당(DB 입출력만 처리), 결과 받아서 객체로 반환
 
 import java.sql.*;
 
