@@ -206,7 +206,7 @@ public class MemberDao extends SuperDao {   //DB연동 ( DB에 직접 연결해�
         return bean;
     }
 
-    public int deleteData(String id) { // 기본키를 사용하여 회원 탈퇴를 시도합니다.
+    public int deleteData(String id) { // 기본키를 사용하여 회원 탈퇴를 시도합니다.//삭제가 몇 건 되었는지 숫자로 알려주기 위해 int 사용
         int cnt = -1;
         String sql = "delete from members where id = ? ";
 
