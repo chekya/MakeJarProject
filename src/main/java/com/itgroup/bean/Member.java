@@ -27,7 +27,17 @@ public class Member { //데이터 구조 (회원 정보 객체(체이터 저장�
     }
 
     public Member() {
-
+    }
+    public Member(String id, String name, String password, String gender, String birth, String marriage, int salary, String address, String manager) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.gender = gender;
+        this.birth = birth;
+        this.marriage = marriage;
+        this.salary = salary;
+        this.address = address;
+        this.manager = manager;
     }
 
     public String getId() {

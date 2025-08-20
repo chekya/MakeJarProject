@@ -4,14 +4,17 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main { // 사용자 인터페이스(메뉴 출력 & 사용자 입력)
-    public static <scanner> void main(String[] args) {
+
+   public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        MemberManager manager = new MemberManager();
+        DataManager manager = new DataManager();
 
         while (true){
             System.out.println("메뉴 선택");
-            System.out.println("0:종료, 1:목록 조회, 2:가입, 3:수정, 4:총회원수, 5:탈퇴, 6:회원정보, 7:성별조회, 8:상세보기");
-            int menu = ((Scanner) scan).nextInt(); //선택한 메뉴
+            System.out.println("0:종료, 1:목록 조회, 2:가입, 3:수정, 4:총회원수, 5:탈퇴, 6:회원정보, 7:성별조회");
+            System.out.println("11:게시물 전체, 12:등록, 13:수정, 14:전체 건수, 15:삭제, 16:1건 정보, 17:짝수만 조회");
+
+            int menu = scan.nextInt(); // 선택한 메뉴
             switch (menu){
                 case  0:
                     System.out.println("프로그램을 종료합니다.");
@@ -21,22 +24,41 @@ public class Main { // 사용자 인터페이스(메뉴 출력 & 사용자 입�
                     manager.selectAll();
                     break;
                 case  2:
+                    manager.insertData();
                     break;
                 case  3:
+                    manager.updateData();
                     break;
                 case  4:
                     manager.getSize();
                     break;
                 case  5:
+                    manager.deleteData();
                     break;
                 case  6:
+                    manager.getMemberOne();
                     break;
                 case  7:
                     manager.findByGender();
                     break;
-                case  8:
-                    manager.getMemberOne();
+                case  11:
+                    manager.selectAllBoard();
                     break;
+                case  12:
+                    break;
+                case  13:
+                    break;
+                case  14:
+                    break;
+                case  15:
+                    break;
+                case  16:
+                    break;
+                case  17:
+                    manager.selectEvenData();
+                    break;
+
+
             }
         }
     }
