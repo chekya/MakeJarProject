@@ -177,8 +177,7 @@ public class MemberDao extends SuperDao {   //DB연동 ( DB에 직접 연결해�
                 bean.setName(rs.getString("name"));
                 bean.setPassword(rs.getString("password"));
                 bean.setGender(rs.getString("gender"));
-                //bean.setBirth(rs.getString("birth"));
-                bean.setBirth(String.valueOf(rs.getDate("birth")));  //날짜타입은 getDate로 갖고와서 문자벨류인 String.valueOf 로 코딩한다.
+                bean.setBirth(String.valueOf(rs.getDate("birth")));  //날짜타입은 getDate로 갖고와서 문자 value인 String.valueOf 로 코딩한다.
                 bean.setMarriage(rs.getString("marriage"));
                 bean.setSalary(rs.getInt("salary"));
                 bean.setAddress(rs.getString("address"));
@@ -260,10 +259,10 @@ public class MemberDao extends SuperDao {   //DB연동 ( DB에 직접 연결해�
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-              /*System.out.println(rs.getString(2));
-                System.out.println(rs.getInt(7));
-                System.out.println(rs.getString("id"));  //이 한줄이 의미하는 것은 멤버 한줄 인 bean,멤버클래스로 만들어지는 객체에 이 데이터를 담는다.
-                System.out.println(rs.getString("gender"));  */
+             // System.out.println(rs.getString(2));
+             // System.out.println(rs.getInt(7));
+             // System.out.println(rs.getString("id"));  //이 한줄이 의미하는 것은 멤버 한줄 인 bean,멤버클래스로 만들어지는 객체에 이 데이터를 담는다.
+             // System.out.println(rs.getString("gender"));
 
 
                 Member bean = new Member();
