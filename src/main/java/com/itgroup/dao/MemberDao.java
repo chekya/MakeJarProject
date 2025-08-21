@@ -360,53 +360,9 @@ public class MemberDao extends SuperDao {   //DB연동 ( DB에 직접 연결해�
 
 
 
-    // List<Member> members = new ArrayList<Member>();
-    // return  members ;
+
 }
 
-// public List<Member> findByGender(String gender) {  //성별 컬럼 gender 을 사용하여 특정 성별의 회원들만 조회합니다.
-
-       /* Connection conn = null ;
-        PreparedStatement pstmp = null ;
-        ResultSet rs = null ;
-        Member bean = null ; //찾고자하는 회원의 정보
-        String sql = "select * from members where gender = ? " ;
-
-        try {
-            conn = super.getConnection();
-            pstmp = conn.prepareStatement(sql);
-
-            pstmp.setString(1,gender);
-            rs = pstmp.executeQuery();
-
-            if(rs.next()){  //1건 발견됨
-                bean = new Member();
-
-                bean.setId(rs.getString("id"));
-                bean.setName(rs.getString("name"));
-                bean.setPassword(rs.getString("password"));
-                bean.setGender(rs.getString("gender"));
-                bean.setBirth(rs.getString("birth"));
-                bean.setMarriage(rs.getString("marriage"));
-                bean.setSalary(rs.getInt("salary"));
-                bean.setAddress(rs.getString("address"));
-                bean.setManager(rs.getString("manager"));
-                //생성자, 찾는 사람 발견되면 그 때 객체생성
-
-            }catch (Exception ex){
-                ex.printStackTrace();
-            }finally {
-                try {
-                    if (rs != null){rs.close();}
-                    if (pstmp != null){pstmp.close();}
-                    if (conn != null){conn.close();}
-                }catch (Exception ex){
-                    ex.printStackTrace();
-                }
-            }
-
-            return bean;
-        } */
 
 
 
